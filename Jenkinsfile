@@ -1,12 +1,14 @@
 pipeline {
      agent any
      stages {
-         stage('Clone Repo') {
-             checkout scm
+         stage('Checkout from SCM') {
+            steps {
+              checkout scm
+            }
          }
          stage('Build') {
-             steps {
-                 sh 'echo "Hello World"'
+            steps {
+              sh 'echo "Hello World"'
              }
          }
 //         stage('Lint HTML') {
